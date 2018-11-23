@@ -9,7 +9,7 @@ import "./App.css";
 
 class App extends Component {
   componentDidMount() {
-    console.log(this.props.appLoaded);
+    console.log("AppLoaded: " + this.props.appLoaded);
   }
 
   componentDidUpdate() {
