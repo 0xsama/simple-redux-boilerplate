@@ -23,7 +23,7 @@ class App extends Component {
         <p>{appName}</p>
       </div>
     ) : (
-      <button onClick={loadApp}>Load</button>
+      <button onClick={loadApp}>Load app</button>
     );
   }
 }

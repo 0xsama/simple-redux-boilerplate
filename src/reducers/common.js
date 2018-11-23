@@ -1,3 +1,5 @@
+import { APP_LOADED } from "../actions/actionTypes";
+
 const defaultState = {
   appName: "Redux Bolierplate",
   appLoaded: false
@@ -5,7 +7,7 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case "APP_LOADED":
+    case APP_LOADED:
       return {
         ...state,
         appLoaded: action.payload
