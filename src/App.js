@@ -9,18 +9,18 @@ import "./App.css";
 
 class App extends Component {
   componentDidMount() {
-    console.log("AppLoaded: " + this.props.appLoaded);
+    console.log(`AppLoaded: ${this.props.appLoaded}`);
   }
 
   componentDidUpdate() {
-    console.log("App loaded logged from component");
+    console.log(`AppLoaded: ${this.props.appLoaded}`);
   }
 
   render() {
     const { appName, appLoaded, loadApp } = this.props;
     return appLoaded ? (
       <div className="app">
-        <p>{appName}</p>
+        <h1>{appName}</h1>
       </div>
     ) : (
       <button onClick={loadApp}>Load app</button>
@@ -28,14 +28,14 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   const { appName, appLoaded } = state.common;
   return { appName, appLoaded };
-}
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return bindActionCreators(actionCreators, dispatch);
-}
+};
 
 export default connect(
   mapStateToProps,
